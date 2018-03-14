@@ -1,0 +1,9 @@
+---
+self_signed_certificate: /etc/ssl/certs/dummy-cert
+self_signed_certificate_key: /etc/ssl/certs/dummy-cert
+default_nginx_user: nginx
+default_nginx_error_log: /var/log/nginx/error.log
+default_nginx_access_log: /var/log/nginx/access.log
+default_nginx_pidfile: /run/nginx.pid
+default_nginx_port: 443
+default_nginx_upstream: http://127.0.0.1

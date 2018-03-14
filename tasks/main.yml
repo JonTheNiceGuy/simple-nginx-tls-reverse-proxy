@@ -1,0 +1,29 @@
+---
+- name: Insert distribution specific variables
+  include_vars: "vars/{{ ansible_os_family }}.yml"
+  when: ansible_os_family == "RedHat"
+
+- name: Install EPEL and NGINX
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - epel-release
+  - nginx
+  when: ansible_os_family == "RedHat"
+  notify: Restart NGINX
+
+- name: Create SSL certificate if it doesn't already exist
+  command: "/etc/ssl/certs/make-dummy-cert {{ tls_certificate | default(self_signed_tls_certificate | default('/etc/ssl/certs/dummy-cert')) }}"
+  args: 
+    creates: "{{ tls_certificate | default(self_signed_tls_certificate | default('/etc/ssl/certs/dummy-cert')) }}"
+  when: ansible_os_family == "RedHat"
+  notify: Restart NGINX
+
+- name: Install new nginx config file
+  template:
+    src: templates/nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+    backup: yes
+  when: ansible_os_family == "RedHat"
+  notify: Restart NGINX

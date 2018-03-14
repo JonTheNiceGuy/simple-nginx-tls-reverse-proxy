@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Jon Spriggs
+  description: A simple NGINX reverse proxy to terminate TLS connections, using primarily a "snakeoil|self-signed" certificate
+  license: unlicense
+  min_ansible_version: 1.2
+
+  platforms:
+  - name: CentOS
+    versions:
+    - 7.4
+
+  galaxy_tags:
+  - TLS
+  - Nginx
+  - Terminating
+  - SSL
+  - Snakeoil
+  - SelfSigned
+
+dependencies: []
