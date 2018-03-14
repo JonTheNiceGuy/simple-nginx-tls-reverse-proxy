@@ -14,14 +14,15 @@ Role Variables
 Here are the values which can be set, and the default values they are set to.
 
 ```
-tls_certificate (e.g. /etc/ssl/certs/dummy-cert)
-tls_certificate_key (e.g. /etc/ssl/certs/dummy-cert)
-nginx_user (e.g. nginx)
-nginx_error_log (e.g. /var/log/nginx/error.log)
-nginx_access_log (e.g. /var/log/nginx/access.log)
-nginx_pidfile (e.g. /run/nginx.pid)
-nginx_port (e.g. 443)
-nginx_upstream (e.g. http://127.0.0.1)
+tls_certificate (The certificate file to use in the TLS termination. e.g. /etc/ssl/certs/dummy-cert)
+tls_certificate_key (The key file to use in the TLS termination. e.g. /etc/ssl/certs/dummy-cert)
+nginx_server_name (The SNI name to reply to. e.g. myserver.lan)
+nginx_user (Which user nginx runs as. e.g. nginx)
+nginx_error_log (Where to send error logs to. e.g. /var/log/nginx/error.log)
+nginx_access_log (Where to send access logs to. e.g. /var/log/nginx/access.log)
+nginx_pidfile (Where the pidfile is stored. e.g. /run/nginx.pid)
+nginx_port (What port or server:port to respond to. e.g. 443 or 192.0.2.1:443)
+nginx_upstream (Where should inbound HTTPS requests be directed. e.g. http://127.0.0.1)
 ```
 
 Example Playbook
