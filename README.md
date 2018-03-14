@@ -3,6 +3,8 @@ Simple nginx TLS Reverse Proxy
 
 This role installs nginx, and then configures it to proxy to an HTTP only web service. It is currently designed for CentOS 7.4 to proxy Ansible AWX, but should work with any HTTP only services.
 
+It is loosely based on two blog posts: [HTTPS behind your reverse proxy](https://reinout.vanrees.org/weblog/2017/05/02/https-behind-proxy.html) and [Using make-dummy-cert to Create a Self-Signed Certificate to HTTPS enable an NGinx Served Website in CentOS – and other mouthfuls](https://toggen.com.au/blog/it-tips/using-make-dummy-cert-to-create-a-self-signed-certificate-to-https-enable-an-nginx-served-website-in-centos-and-other-mouthfuls).
+
 Requirements
 ------------
 
